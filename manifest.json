@@ -1,0 +1,32 @@
+{
+    "name": "RinoCT - Başlangıç Sayfası",
+    "short_name": "RinoCT",
+    "description": "Özel tasarımlı, fütüristik başlangıç sayfası.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#050608",
+    "theme_color": "#121418",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "192x192 512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "share_target": {
+        "action": "/index.html",
+        "method": "GET",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "query"
+        }
+    },
+    "protocol_handlers": [
+        {
+            "protocol": "web+rinoct",
+            "url": "/index.html?url=%s"
+        }
+    ]
+}

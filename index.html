@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RinoCT - Başlangıç Sayfası</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121418">
+    <link rel="apple-touch-icon" href="icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Arka Plan Efektleri -->
+    <div class="background-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- ANA EKRAN (Google Benzeri Arayüz) -->
+    <div id="home-view" class="view-container active">
+        <header class="home-header">
+            <div class="clock-widget">
+                <span id="home-time">00:00</span>
+                <span id="home-date">1 Ocak Pazartesi</span>
+            </div>
+            <button class="settings-btn" id="open-settings-home" title="Ayarlar">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+        </header>
+
+        <main class="home-main">
+            <div class="logo-container">
+                <h1 class="rino-logo">
+                    <span class="c1">R</span><span class="c2">i</span><span class="c3">n</span><span class="c4">o</span><span class="c1">C</span><span class="c2">T</span>
+                </h1>
+                <p class="logo-subtitle">Sınırları Aşan Başlangıç Sayfası</p>
+            </div>
+
+            <div class="search-container">
+                <form id="home-search-form">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="home-search-input" placeholder="Web'de ara veya bir adres girin..." autocomplete="off">
+                        <button type="submit" class="search-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="shortcuts-container">
+                <div class="shortcut" data-url="https://www.youtube.com">
+                    <div class="shortcut-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <span>YouTube</span>
+                </div>
+                <div class="shortcut" data-url="https://x.com">
+                    <div class="shortcut-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <span>X</span>
+                </div>
+                <div class="shortcut" data-url="https://github.com">
+                    <div class="shortcut-icon"><i class="fa-brands fa-github"></i></div>
+                    <span>GitHub</span>
+                </div>
+                <div class="shortcut" data-url="https://tr.wikipedia.org">
+                    <div class="shortcut-icon"><i class="fa-brands fa-wikipedia-w"></i></div>
+                    <span>Vikipedi</span>
+                </div>
+                <div class="shortcut" id="add-shortcut-btn" data-url="https://www.google.com">
+                    <div class="shortcut-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <span>Google</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="home-footer">
+            <div class="daily-question-widget glass-panel">
+                <div class="widget-header">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Günün Sorusu</span>
+                </div>
+                <p id="daily-question" class="question-text">Yükleniyor...</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- AYARLAR MODALI -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-gear"></i> Tarayıcı Ayarları</h2>
+                <button id="close-settings-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="search-engine-select">Varsayılan Arama Motoru</label>
+                    <select id="search-engine-select" class="custom-select">
+                        <option value="google">Google</option>
+                        <option value="bing">Bing</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                        <option value="yandex">Yandex</option>
+                        <option value="yahoo">Yahoo!</option>
+                    </select>
+                    <p class="setting-desc">Arama çubuğuna yazılan metinleri hangi motorla aratmak istediğinizi seçin.</p>
+                </div>
+                
+                <div class="setting-group warning-group">
+                    <p class="warning-text">
+                        <i class="fa-solid fa-check"></i> 
+                        <strong>Sistem Stabil:</strong> Ağ kopmalarını önlemek amacıyla artık siteler doğrudan mevcut pencerenizde açılacaktır. Geri dönmek için tarayıcınızın "Geri" tuşunu kullanabilirsiniz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
